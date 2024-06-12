@@ -1,0 +1,14 @@
+---
+type Props = {
+  text: string;
+};
+const { text } = Astro.props;
+---
+
+<h1>{text}</h1>
+
+<style>
+  h1 {
+    margin-block-end: 1.2rem;
+  }
+</style>

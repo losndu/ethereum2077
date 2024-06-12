@@ -1,0 +1,68 @@
+---
+import PrimaryCta from "../components/PrimaryCta.astro";
+---
+<header>
+  <nav class="navigation">
+    <div class="navigation_links">
+      <div>
+      <a href="" class="logo">Ethereum 2077</a>
+      </div>
+      <ul class="navigation_list">
+        <li>
+          <a href="">Blog</a>
+        </li>
+        <li>
+          <a href="">Projects</a>
+        </li>
+        <li>
+          <a href="">Resources</a>
+        </li>
+      </ul>
+    </div>
+		<ul class="navigation_social">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li><PrimaryCta text="Join Community"/></li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  header {
+    margin-block-end: clamp(4rem, 2.8571rem + 5.7143vi, 8rem);
+    padding-block: 1.6rem;
+    border-bottom: 0.5px solid rgb(229, 227, 227);
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-inline: var(--space-body);
+
+      &_links {
+        display: flex;
+        align-items: center;
+        column-gap: 3.2rem;
+      }
+      &_list {
+        display: none;
+        align-items: center;
+        column-gap: 1.6rem;
+      }
+      &_social {
+        display: flex;
+        align-items: center;
+        column-gap: 1.2rem;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      .navigation {
+        &_list {
+          display: flex;
+        }
+      }
+    }
+  }
+</style>

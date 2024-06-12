@@ -1,0 +1,36 @@
+h1 {
+    font-family: 'manrope-extrabold', sans-serif;
+    font-weight: normal;
+    font-size: var(--h1);
+    letter-spacing: -4px;
+}
+
+h2 {
+    font-family: 'manrope-bold', sans-serif;
+    font-weight: bold;
+    font-size: var(--step-5);
+    text-transform: capitalize;
+}
+
+h3 {
+    font-family: 'manrope-bold', sans-serif;
+    font-weight: normal;
+    font-size: var(--step-4);
+}
+
+p {
+    font-family: 'manrope-regular', sans-serif;
+    font-weight: normal;
+    font-size: var(--p);
+    line-height: 1.5;
+}
+
+a {
+    font-family: 'manrope-regular', sans-serif;
+    font-weight: normal;
+    font-size: var(--step--1);
+}
+
+span {
+    font-family: 'manrope-regular', sans-serif;
+}

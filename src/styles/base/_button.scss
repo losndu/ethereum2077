@@ -1,0 +1,105 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+/*GENERAL BUTTON STYLES*/
+@mixin button {
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+
+
+  &:disabled {
+    background-color: var(--leather-default-normal);
+    color: var(--neutral-ink_default_hover);
+  }
+
+}
+/*******************/
+
+/***PRIMARY BUTTON****/
+@mixin button-primary {
+  background-color: var(--semantic-blue-default-hover);
+  color: var(--leather-default-normal);
+  transition: background 0.15s ease-out, transform 0.1s ease-out, box-shadow 0.15s ease-out;
+
+  &:hover {
+    background-color: var(--leather_light_normal);
+    color: var(--neutral-ink_dark_normal);
+    border: 0.5px solid var(--neutral-ink_dark_normal);
+  }
+}
+/*******************/
+
+/***SECONDARY BUTTON****/
+@mixin button-secondary {
+  background-color: var(--leather_light_normal);
+  color: var(--neutral-ink_dark_active);
+  border: 1px solid var(--neutral-ink-light-normal);
+
+  &:hover {
+    background-color: var(--yellow_dark_normal);
+    color: var(--neutral-ink_dark_active);
+    border: none;
+  }
+
+}
+/*******************/
+
+/**BUTTON HEIGHT*/
+@mixin button-h60 {
+  height: 3.75rem;
+  font-weight: 600;
+}
+
+@mixin button-h58 {
+  height: 3.625rem;
+  font-weight: 600;
+}
+
+@mixin button-h52 {
+  height: 3.25rem;
+  font-weight: 600;
+}
+
+@mixin button-h42 {
+  height: 2.625rem;
+  font-weight: 600;
+}
+
+@mixin button-h36 {
+  height: 2.25rem;
+  font-weight: 600;
+}
+/**************/
+
+/**TEXT LINK BUTTON*/
+@mixin button-text {
+  border: none;
+  background-color: var(--leather_light_normal);
+  text-align: left;
+  text-transform: capitalize;
+  position: relative;
+
+  &:hover {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 25%;
+      height: 2px;
+      background-color: $yellow_dark_normal;
+      bottom: 0;
+      left: 0;
+      display: inline;
+    }
+  }
+
+  &:disabled {
+    background-color: var(--leather_light_normal);
+    color: $leather_default_active;
+  }
+}

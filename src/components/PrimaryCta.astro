@@ -1,0 +1,19 @@
+---
+type Props = {
+  text: string;
+};
+const { text } = Astro.props;
+---
+
+<div>
+  <a href="" class="button-primary">{text}</a>
+</div>
+
+<style lang="scss">
+  @import "../styles/base/_button.scss";
+
+  .button-primary {
+    @include button();
+    @include button-primary();
+  }
+</style>
