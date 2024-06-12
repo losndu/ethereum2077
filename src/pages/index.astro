@@ -24,6 +24,18 @@ import SecondaryCta from "../components/SecondaryCta.astro";
         <SecondaryCta text="New to web3, get started here" />
       </div>
     </section>
+	
+	<section class="column_list">
+		<div>
+			<div>
+				<img src="/images/f.jpg" alt="">
+			</div>
+
+			<div>
+				<img src="/images/f.jpg" alt="">
+			</div>
+		</div>
+	</section>
   </Main>
 </Layout>
 
@@ -51,7 +63,7 @@ import SecondaryCta from "../components/SecondaryCta.astro";
 		justify-content: center;
 		column-gap: 1.2rem;
 		padding: 2rem 1.2rem;
-		border: 1px dotted rgb(165, 163, 163);
+		border: 1px dotted rgb(196, 195, 195);
 		border-radius: .8rem;
 	}
 
@@ -61,4 +73,9 @@ import SecondaryCta from "../components/SecondaryCta.astro";
 	}
     }
   }
+
+  .column_list {
+	margin-inline: var(--space-body);
+  }
+
 </style>
