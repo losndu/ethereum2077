@@ -25,6 +25,9 @@ import PrimaryCta from "../components/PrimaryCta.astro";
       <li></li>
       <li><PrimaryCta text="Join Community"/></li>
     </ul>
+    <div class="navigation_mobile">
+    <span>menu</span>
+    </div>
   </nav>
 </header>
 
@@ -51,9 +54,18 @@ import PrimaryCta from "../components/PrimaryCta.astro";
         column-gap: 1.6rem;
       }
       &_social {
-        display: flex;
+        display: none;
         align-items: center;
         column-gap: 1.2rem;
+      }
+    }
+
+
+    @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
+      .navigation {
+        &_social {
+          display: flex;
+        }
       }
     }
 
