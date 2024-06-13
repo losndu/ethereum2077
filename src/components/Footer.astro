@@ -1,0 +1,122 @@
+<footer class="footer">
+  <div class="footer_container">
+    <h3 class="footer_heading">
+      The Ethereum-2077 Collective is a community of founders and creatives
+      building solutions and earning value.
+    </h3>
+    <div class="footer_content">
+      <div>
+        <h3 class="">Ethereum-2077</h3>
+        <ul class="">
+          <li class="">
+            <a href="#" class="">About</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Media Gallery</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="">Help center</h3>
+        <ul class="">
+          <li class="">
+            <a href="#" class="">Discord Server</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Twitter</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Facebook</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="">Help center</h3>
+        <ul class="">
+          <li class="">
+            <a href="#" class="">Discord Server</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Twitter</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Facebook</a>
+          </li>
+          <li class="">
+            <a href="#" class="">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    padding-inline: var(--space-body);
+    background-color: #111827;
+    padding-block: 3.2rem;
+
+    &_heading {
+      max-width: 36rem;
+      color: var(--leather-default-normal);
+      margin-block-end: 1.6rem;
+      font-size: 1.875rem;
+    }
+
+    &_content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 1rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+
+      h3 {
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--leather-default-normal);
+      }
+
+      ul {
+        color: #737373;
+        font-weight: 500;
+
+        li {
+          margin-block-end: 1rem;
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
+      &_content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      &_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+
+      &_heading {
+        margin-block-start: 2rem;
+      }
+
+    }
+  }
+</style>

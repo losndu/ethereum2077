@@ -5,8 +5,11 @@
 :root {
   --space-body: clamp(1rem, 0.2143rem + 3.9286vi, 3.75rem);
   --h1: clamp(2.25rem, 1.6071rem + 3.2143vi, 4.5rem);
+  --h2: clamp(1.75rem, 1.3152rem + 2.1739vi, 3rem);
+  --h3: clamp(1.125rem, 0.9946rem + 0.6522vi, 1.5rem);
   --p: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
   --subheading: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
+  --letter-spacing: clamp(-0.25rem, -0.0815rem + -0.2174vi, -0.125rem);
 
   /*COLORS*/
 
@@ -122,8 +125,6 @@ html {
   font-size: 100%;
 }
 
-body {
-}
 
 /**
  * Basic styles for links
@@ -155,4 +156,69 @@ img {
 ul,
 li {
   list-style-type: none;
+}
+
+figcaption {
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+details {
+  padding: 1rem;
+
+  &[open] {
+    height: auto;
+    background-color: #f1f3f9; /* Background color when details is open */
+    padding: 1rem;
+  }
+  
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-weight: 700;
+  font-size: 1.60rem;
+  border-radius: 1rem;
+
+
+  &::before {
+    content: "\002B"; /* Unicode character for plus sign */
+    font-size: 1.20rem;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: var(--semantic-blue-default-hover); /* Change the color as desired */
+  }
+}
+
+
+details[open] summary::before {
+  content: "\02212"; /* Unicode character for minus sign */
+  right: 1rem;
+  top: 30%;
+}
+
+details {
+  margin-bottom: 1.25rem;
+  border-bottom: 2px dotted var(--semantic-blue-default-hover);
+  padding-bottom: 2.4rem;
+}
+
+details[open] summary {
+  padding-bottom: 1.25rem; /* Adjust the margin as needed */
+  background-color: #f1f3f9;
+}
+
+/* Style to remove default disclosure triangle on some browsers */
+details summary::-webkit-details-marker {
+  display: none;
 }

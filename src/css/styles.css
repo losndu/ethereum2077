@@ -1,6 +1,6 @@
+@charset "UTF-8";
 /**
 Shadows 
-
 @mixin _4dp-penumbra {
   box-shadow: 0 4px 4px 0 rgba(160, 160, 160, 0.14),
     0 2px 5px 0 rgba(160, 160, 160, 0.12), 0 1px 10px 0 rgba(160, 160, 160, 0.1);
@@ -319,8 +319,11 @@ template {
 :root {
   --space-body: clamp(1rem, 0.2143rem + 3.9286vi, 3.75rem);
   --h1: clamp(2.25rem, 1.6071rem + 3.2143vi, 4.5rem);
+  --h2: clamp(1.75rem, 1.3152rem + 2.1739vi, 3rem);
+  --h3: clamp(1.125rem, 0.9946rem + 0.6522vi, 1.5rem);
   --p: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
   --subheading: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
+  --letter-spacing: clamp(-0.25rem, -0.0815rem + -0.2174vi, -0.125rem);
   /*COLORS*/
   /* Leather */
   --leather-default-normal: #f1f1f1;
@@ -456,6 +459,65 @@ li {
   list-style-type: none;
 }
 
+figcaption {
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+details {
+  padding: 1rem;
+}
+details[open] {
+  height: auto;
+  background-color: #f1f3f9; /* Background color when details is open */
+  padding: 1rem;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+summary::before {
+  content: "+"; /* Unicode character for plus sign */
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: var(--semantic-blue-default-hover); /* Change the color as desired */
+}
+
+details[open] summary::before {
+  content: "−"; /* Unicode character for minus sign */
+  right: 1rem;
+  top: 30%;
+}
+
+details {
+  margin-bottom: 1.25rem;
+  border-bottom: 2px dotted var(--semantic-blue-default-hover);
+  padding-bottom: 2.4rem;
+}
+
+details[open] summary {
+  padding-bottom: 1.25rem; /* Adjust the margin as needed */
+  background-color: #f1f3f9;
+}
+
+/* Style to remove default disclosure triangle on some browsers */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
 /*GENERAL BUTTON STYLES*/
 /*******************/
 /***PRIMARY BUTTON****/
@@ -469,6 +531,13 @@ li {
 @font-face {
   font-family: "manrope-regular";
   src: url("/src/fonts/manrope-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "manrope-medium";
+  src: url("/src/fonts/manrope-medium.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -541,20 +610,21 @@ h1 {
   font-family: "manrope-extrabold", sans-serif;
   font-weight: normal;
   font-size: var(--h1);
-  letter-spacing: -4px;
+  letter-spacing: var(--letter-spacing);
 }
 
 h2 {
   font-family: "manrope-bold", sans-serif;
   font-weight: bold;
-  font-size: var(--step-5);
-  text-transform: capitalize;
+  font-size: var(--h2);
+  letter-spacing: var(--letter-spacing);
 }
 
 h3 {
   font-family: "manrope-bold", sans-serif;
   font-weight: normal;
-  font-size: var(--step-4);
+  font-size: var(--h3);
+  letter-spacing: -1.6px;
 }
 
 p {
