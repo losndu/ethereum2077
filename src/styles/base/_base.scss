@@ -7,7 +7,7 @@
   --h1: clamp(2.25rem, 1.6071rem + 3.2143vi, 4.5rem);
   --h2: clamp(1.75rem, 1.3152rem + 2.1739vi, 3rem);
   --h3: clamp(1.125rem, 0.9946rem + 0.6522vi, 1.5rem);
-  --p: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
+  --p: clamp(1.125rem, 1.0893rem + 0.1786vi, 1rem);
   --subheading: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
   --letter-spacing: clamp(-0.25rem, -0.0815rem + -0.2174vi, -0.125rem);
 
@@ -169,6 +169,7 @@ button {
 
 details {
   padding: 1rem;
+  font-family: 'manrope-bold', sans-serif;
 
   &[open] {
     height: auto;
@@ -186,6 +187,8 @@ summary {
   font-weight: 700;
   font-size: 1.60rem;
   border-radius: 1rem;
+  font-family: 'manrope-bold', sans-serif;
+  letter-spacing: -1px;
 
 
   &::before {
