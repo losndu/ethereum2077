@@ -640,7 +640,7 @@ p {
 a {
   font-family: "manrope-regular", sans-serif;
   font-weight: normal;
-  font-size: var(--step--1);
+  font-size: var(--p);
 }
 
 span {
