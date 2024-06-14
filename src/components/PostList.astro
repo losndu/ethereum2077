@@ -1,0 +1,11 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Post from './Post.astro';
+type Props = {
+    post: CollectionEntry<'posts'>;
+};
+
+const { post } = Astro.props;
+---
+
+    <Post post={post} />

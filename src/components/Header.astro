@@ -5,14 +5,14 @@ import PrimaryCta from "../components/PrimaryCta.astro";
   <nav class="navigation">
     <div class="navigation_links">
       <div>
-      <a href="" class="logo">Ethereum 2077</a>
+      <a href="/" class="logo">Ethereum 2077</a>
       </div>
       <ul class="navigation_list">
         <li>
-          <a href="">Blog</a>
+          <a href="/blog">Blog</a>
         </li>
         <li>
-          <a href="">Projects</a>
+          <a href="/projects">Projects</a>
         </li>
         <li>
           <a href="">Resources</a>
@@ -37,6 +37,10 @@ import PrimaryCta from "../components/PrimaryCta.astro";
     margin-block-end: clamp(4rem, 2.8571rem + 5.7143vi, 4rem);
     padding-block: 1.6rem;
     border-bottom: 0.5px solid rgb(229, 227, 227);
+
+    a {
+      font-family: "manrope-medium", sans-serif;
+    }
 
     .navigation {
       display: flex;
