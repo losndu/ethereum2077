@@ -478,6 +478,7 @@ details[open] {
 }
 
 summary {
+  padding-inline-start: 2rem;
   list-style: none;
   cursor: pointer;
   position: relative;
@@ -494,7 +495,7 @@ summary::before {
   font-weight: 700;
   position: absolute;
   top: 50%;
-  right: 1rem;
+  left: 0;
   transform: translateY(-50%);
   color: var(--semantic-blue-default-hover); /* Change the color as desired */
 }

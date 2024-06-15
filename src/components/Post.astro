@@ -9,7 +9,7 @@ type Props = {
 const { post } = Astro.props;
 ---
 <article class="articles">
-    <a href={`/blog/${post.slug}`}>
+    <a class="articles_image"href={`/blog/${post.slug}`}>
         <Image src={post.data.image} width={600} height={600/1.5} alt={post.data.title}
         class="rounded-2xl" />
     </a>
@@ -34,5 +34,11 @@ const { post } = Astro.props;
         p {
             max-width: 600px;
         }
+
+
+    }
+
+    .articles_image {
+        margin-block-end: 2rem;
     }
 </style>

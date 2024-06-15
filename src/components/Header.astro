@@ -60,29 +60,30 @@ import PrimaryCta from "../components/PrimaryCta.astro";
       <li><a href="/resources">Resources</a></li>
     </ul>
   </nav>
+
+  <script>
+    const menuButton = document.querySelector("#menu-button");
+    const mobileMenu = document.querySelector("#mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+      menuButton.classList.toggle("active");
+      menuButton.classList.toggle("bg-hidden");
+    });
+
+    mobileMenu.addEventListener("click", (event) => {
+      if (event.target.tagName === "A") {
+        mobileMenu.classList.remove("active");
+        menuButton.classList.remove("active");
+        menuButton.classList.remove("dark:hover");
+        menuButton.classList.toggle("bg-hidden");
+      }
+    });
+  </script>
 </header>
 
-<script>
-  const menuButton = document.querySelector("#menu-button");
-  const mobileMenu = document.querySelector("#mobile-menu");
 
-  menuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-    menuButton.classList.toggle("active");
-    menuButton.classList.toggle("bg-hidden");
-  });
-
-  mobileMenu.addEventListener("click", (event) => {
-    if (event.target.tagName === "A") {
-      mobileMenu.classList.remove("active");
-      menuButton.classList.remove("active");
-      menuButton.classList.remove("dark:hover");
-      menuButton.classList.toggle("bg-hidden");
-    }
-  });
-</script>
-
-<style lang="scss">
+<style lang="scss" is:global>
   header {
     margin-block-end: clamp(4rem, 2.8571rem + 5.7143vi, 4rem);
     padding-block: 1.6rem;
