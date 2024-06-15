@@ -438,8 +438,6 @@ a {
   cursor: pointer;
 }
 a:hover, a:active, a:focus {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
   transition: all 0.4s ease-in-out;
 }
 

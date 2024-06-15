@@ -1,0 +1,11 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Project from './Project.astro';
+type Props = {
+    project: CollectionEntry<'projects'>;
+};
+
+const { project } = Astro.props;
+---
+
+<Project project={project} />

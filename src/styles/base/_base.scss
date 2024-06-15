@@ -135,8 +135,6 @@ a {
   cursor: pointer;
 
   @include on-event {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
     transition: all 0.4s ease-in-out;
   }
 }

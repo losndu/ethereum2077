@@ -1,3 +1,75 @@
 ---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Main from "../components/Main.astro";
+import H1AlignLeft from "../components/H1AlignLeft.astro";
+import PrimaryCta from "../components/PrimaryCta.astro";
+import ProjectList from "../components/ProjectList.astro";
+import Footer from "../components/Footer.astro";
 import { ViewTransitions } from 'astro:transitions';
+
+const projects = await getCollection("projects");
 ---
+
+<Layout title="Blog | Ethereum-2077 Collective">
+  <Main>
+    <section class="blog">
+      <div class="blog_heading">
+        <H1AlignLeft text="Projects" />
+        <p class="blog_subheading">
+            Projects on the Ethereum ecosystem we have worked with.
+        </p>
+      </div>
+
+      <div class="blog_articles">
+        {projects.map((project) => <ProjectList project={project} />)}
+      </div>
+      
+      <div class="blog_cta">
+      <PrimaryCta text="See More Projects" />
+      </div>
+    </section>
+
+      <Footer />
+  </Main>
+</Layout>
+
+<style lang="scss">
+  .blog {
+    margin-inline: var(--space-body);
+    margin-block-end: 6rem;
+
+    &_heading {
+        text-align: left;
+    margin-block-end: 1.6rem;
+    }
+
+    &_subheading {
+      font-size: var(--subheading);
+      margin-block-start: 1.2rem;
+      margin-block-end: 2rem;
+    }
+    &_articles {
+      display: grid;
+      row-gap: 1.6rem;
+      column-gap: 1.6rem;
+      justify-content: center;
+    }
+    &_cta {
+    margin-block: 8rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
+        &_articles {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+        &_articles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    }
+  }
+</style>

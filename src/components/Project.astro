@@ -1,0 +1,73 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+  project: CollectionEntry<"projects">;
+};
+
+const { project } = Astro.props;
+---
+
+<article class="projects">
+  <a class="projects_image" href={`/projects/${project.slug}`}>
+    <!--
+                <Image src={project.data.title} width={600} height={600/1.5} alt={project.data.title}
+        class="rounded-2xl" />
+             -->
+  </a>
+  <!--
+
+    <a href={`/projects/${project.slug}`} class="text-4xl">
+        <h2>{project.data.title}</h2>
+    </a>
+     -->
+  <h2>{project.data.title}</h2>
+  <p class="text-zinc-500 line-clamp-1">
+    {project.body}
+  </p>
+  <div class="projects_cta">
+    <a href={`${project.data.url}`} target="_blank">view website</a>
+  </div>
+</article>
+
+<style lang="scss">
+  .projects {
+    display: grid;
+    row-gap: 2rem;
+    border: 1px solid var(--semantic-blue-default-normal);
+    padding: 2rem;
+    border-radius: 0.5rem;
+
+    h2 {
+      font-size: 2.4rem;
+      letter-spacing: -1px;
+    }
+
+    p {
+      max-width: 600px;
+    }
+  }
+
+  .projects_image {
+    margin-block-end: 2rem;
+  }
+
+  .projects_cta {
+    margin-block: 1rem;
+
+    a {
+        border: 1px solid var(--semantic-blue-default-normal);
+        border-radius: 4px;
+        padding: 0.8rem;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: var(--semantic-blue-default-normal);
+            color: var(--leather-default-normal);
+            text-decoration: none;
+            font-family: "manrope-medium" sans-serif;
+        }
+    }
+  }
+</style>

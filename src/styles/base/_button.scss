@@ -28,9 +28,9 @@
   transition: background 0.15s ease-out, transform 0.1s ease-out, box-shadow 0.15s ease-out;
 
   &:hover {
-    background-color: var(--leather_light_normal);
-    color: var(--neutral-ink_dark_normal);
+    background-color: var(--semantic-blue-default-hover);
     border: 0.5px solid var(--neutral-ink_dark_normal);
+    box-shadow: 0px 2px 12px var(--semantic-blue-default-hover);
   }
 }
 /*******************/
@@ -40,11 +40,11 @@
   background-color: var(--leather_light_normal);
   color: var(--neutral-ink_dark_active);
   border: 1px solid var(--neutral-ink-light-normal);
+  transition: background 0.15s ease-out, transform 0.1s ease-out, box-shadow 0.15s ease-out;
 
   &:hover {
-    background-color: var(--yellow_dark_normal);
-    color: var(--neutral-ink_dark_active);
-    border: none;
+    border: 1px solid var(--semantic-blue-default-hover);
+    box-shadow: 0px 1px 8px var(--neutral-porcelain-light-active);
   }
 
 }
