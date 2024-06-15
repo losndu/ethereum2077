@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import "../css/styles.css";
 import Header from "../components/Header.astro";
 interface Props {
@@ -68,6 +69,7 @@ const {
     <meta name="theme-color" content="#ffffff" />
 
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="min-h-screen">
     <Header />

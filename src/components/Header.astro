@@ -1,11 +1,12 @@
 ---
 import PrimaryCta from "../components/PrimaryCta.astro";
 ---
+
 <header>
   <nav class="navigation">
     <div class="navigation_links">
       <div>
-      <a href="/" class="logo">Ethereum 2077</a>
+        <a href="/" class="logo">Ethereum 2077</a>
       </div>
       <ul class="navigation_list">
         <li>
@@ -15,22 +16,66 @@ import PrimaryCta from "../components/PrimaryCta.astro";
           <a href="/projects">Projects</a>
         </li>
         <li>
-          <a href="">Resources</a>
+          <a href="/resources">Resources</a>
         </li>
       </ul>
     </div>
-		<ul class="navigation_social">
+    <ul class="navigation_social">
       <li><a href="">tw</a></li>
       <li><a href="">ds</a></li>
       <li><a href="">sub</a></li>
       <li><a href="">yt</a></li>
-      <li><PrimaryCta text="Join Community"/></li>
+      <li><PrimaryCta text="Join Community" /></li>
     </ul>
     <div class="navigation_mobile">
-    <span>menu</span>
+      <button id="menu-button"
+        data-collapse-toggle="navbar-default"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"></path>
+        </svg>
+      </button>
     </div>
+    <ul id="mobile-menu" class="hidden">
+      <li><a href="#">Menu Item 1</a></li>
+      <li><a href="#">Menu Item 2</a></li>
+      <li><a href="#">Menu Item 3</a></li>
+    </ul>
   </nav>
 </header>
+
+<script>
+  const menuButton = document.querySelector("#menu-button");
+  const mobileMenu = document.querySelector("#mobile-menu");
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+    menuButton.classList.toggle("active");
+  });
+
+  mobileMenu.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") {
+      mobileMenu.classList.remove("active");
+      menuButton.classList.remove("active");
+    }
+  });
+</script>
 
 <style lang="scss">
   header {
@@ -65,6 +110,20 @@ import PrimaryCta from "../components/PrimaryCta.astro";
       }
     }
 
+    #mobile-menu.active {
+      display: block; /* or flex, or grid, or whatever */
+      position: fixed;
+  top: 5.8rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+  background-color: #006FFF;
+  color: #fff;
+  height: 100vh; /* Add this */
+  overflow-y: auto; /* Add this */
+    }
 
     @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
       .navigation {
@@ -86,3 +145,4 @@ import PrimaryCta from "../components/PrimaryCta.astro";
     }
   }
 </style>
+
