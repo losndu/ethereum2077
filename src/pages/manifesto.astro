@@ -5,12 +5,17 @@ import H1 from "../components/H1.astro";
 import PrimaryCta from "../components/PrimaryCta.astro";
 import SecondaryCta from "../components/SecondaryCta.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 ---
 
-
 <Layout title="Communities around the world">
-    <Main>
-      
-    </Main>
-  </Layout>
+  <Main>
+    <div class="hero">
+      <H1 text="A decentralised future" />
+      <p class="hero_subheading">
+        Explore Ethereum with the best community for web3. Interacting with
+        crypto has never been so simple.
+      </p>
+    </div>
+  </Main>
+</Layout>
