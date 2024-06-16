@@ -77,6 +77,8 @@ const {
   </body>
   
   <style lang="scss" is:global>
+    @import "../styles/base/_button.scss";
+
     .linkText {
       transition:
         background 0.15s ease-out,
@@ -121,6 +123,14 @@ const {
         font-family: "manrope-medium", sans-serif;
         font-size: 0.8rem;
       }
+    }
+    .button-primary {
+    @include button();
+    @include button-primary();
+  }
+    .button-secondary {
+      @include button();
+      @include button-secondary();
     }
   </style>
 </html>

@@ -1,11 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import H1 from "../components/H1.astro";
 import PrimaryCta from "../components/PrimaryCta.astro";
 import SecondaryCta from "../components/SecondaryCta.astro";
+import PostList from "../components/PostList.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from 'astro:transitions';
+
+const posts = await getCollection("posts");
+
+// Sort posts in descending order (newest first)
+const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+// Limit the number of posts to 3
+const latestPosts = sortedPosts.slice(0, 3);
 ---
 
 <Layout title="Welcome to Ethereum 2077 collective">
@@ -24,8 +34,8 @@ import { ViewTransitions } from 'astro:transitions';
         crypto has never been so simple.
       </p>
       <div class="hero_cta">
-        <PrimaryCta text="Join Community" />
-        <SecondaryCta text="get started here" />
+        <a href="/community"  class="button-primary">Join Community</a>
+        <a href="/blog"  class="button-secondary">get started here</a>
       </div>
       <div class="hero_partners">
         <div class="container">
@@ -235,7 +245,7 @@ import { ViewTransitions } from 'astro:transitions';
       <h2>designed for creating value</h2>
       <div class="purpose_container">
         <div class="purpose_item">
-          <img src="/arrow.svg" alt="" width="" height="" />
+          <img src="/ghost.svg" alt="" width="" height="" />
           <h3>appeal to builders and creatives</h3>
           <p>
             Our community is about value relationships between builders and
@@ -243,7 +253,7 @@ import { ViewTransitions } from 'astro:transitions';
           </p>
         </div>
         <div class="purpose_item">
-          <img src="/arrow.svg" alt="" width="" height="" />
+          <img src="/ghost.svg" alt="" width="" height="" />
           <h3>appeal to builders and creatives</h3>
           <p>
             Our community is about value relationships between builders and
@@ -251,7 +261,7 @@ import { ViewTransitions } from 'astro:transitions';
           </p>
         </div>
         <div class="purpose_item">
-          <img src="/arrow.svg" alt="" width="" height="" />
+          <img src="/ghost.svg" alt="" width="" height="" />
           <h3>appeal to builders and creatives</h3>
           <p>
             Our community is about value relationships between builders and
@@ -259,7 +269,7 @@ import { ViewTransitions } from 'astro:transitions';
           </p>
         </div>
         <div class="purpose_item">
-          <img src="/arrow.svg" alt="" width="" height="" />
+          <img src="/ghost.svg" alt="" width="" height="" />
           <h3>appeal to builders and creatives</h3>
           <p>
             Our community is about value relationships between builders and
@@ -317,8 +327,8 @@ import { ViewTransitions } from 'astro:transitions';
       </div>
     </section>
 
-    <section class="articles">
-      <div class="articles_heading">
+    <section class="articlesFeed">
+      <div class="articlesFeed_heading">
         <h2>latest from The Collective</h2>
         <p>
           Dive into Web3 knowledge, news, and community voices, with articles on
@@ -326,84 +336,12 @@ import { ViewTransitions } from 'astro:transitions';
           of founders and creatives.
         </p>
       </div>
-
-      <div class="articles_list">
-        <div class="item">
-          <a href="">
-            <img src="/images/img.svg" alt="" />
-          </a>
-
-          <span class="tag">tutorial</span>
-
-          <h3>unlock the power of Ethereum</h3>
-
-          <div class="time">
-            <span
-              >published on <time datetime="2024-06-13T14:30:00"
-                >June 13, 2024</time
-              ></span
-            >
-          </div>
-          <p>
-            Imagine a world where understanding Ethereum is effortless. The
-            Collective simplifies complex concepts, making it easy for anyone to
-            learn and onboard. Our resources and community support enable you to
-            grasp the fundamentals, unlocking your potential to contribute and
-            innovate in the Ethereum ecosystem.
-          </p>
-        </div>
-        <div class="item">
-          <a href="">
-            <img src="/images/img.svg" alt="" />
-          </a>
-
-          <span class="tag">tutorial</span>
-
-          <h3>unlock the power of Ethereum</h3>
-
-          <div class="time">
-            <span
-              >published on <time datetime="2024-06-13T14:30:00"
-                >June 13, 2024</time
-              ></span
-            >
-          </div>
-          <p>
-            Imagine a world where understanding Ethereum is effortless. The
-            Collective simplifies complex concepts, making it easy for anyone to
-            learn and onboard. Our resources and community support enable you to
-            grasp the fundamentals, unlocking your potential to contribute and
-            innovate in the Ethereum ecosystem.
-          </p>
-        </div>
-        <div class="item">
-          <a href="">
-            <img src="/images/img.svg" alt="" />
-          </a>
-
-          <span class="tag">tutorial</span>
-
-          <h3>unlock the power of Ethereum</h3>
-
-          <div class="time">
-            <span
-              >published on <time datetime="2024-06-13T14:30:00"
-                >June 13, 2024</time
-              ></span
-            >
-          </div>
-          <p>
-            Imagine a world where understanding Ethereum is effortless. The
-            Collective simplifies complex concepts, making it easy for anyone to
-            learn and onboard. Our resources and community support enable you to
-            grasp the fundamentals, unlocking your potential to contribute and
-            innovate in the Ethereum ecosystem.
-          </p>
-        </div>
+      <div class="articlesFeed_list">
+          {latestPosts.map((post) => <PostList post={post} />)}
       </div>
 
-      <div class="articles_cta">
-        <SecondaryCta text="read more articles" />
+      <div class="articlesFeed_cta">
+        <a href="/blog"  class="button-secondary">read more articles</a>
       </div>
     </section>
 
@@ -685,6 +623,7 @@ import { ViewTransitions } from 'astro:transitions';
       display: inline-grid;
       row-gap: 3.2rem;
       justify-content: center;
+      align-items: center;
       column-gap: 1.2rem;
       padding: 2rem 1.2rem;
       border: 2px dotted rgb(196, 195, 195);
@@ -953,7 +892,7 @@ import { ViewTransitions } from 'astro:transitions';
     }
   }
 
-  .articles {
+  .articlesFeed {
     display: grid;
     justify-content: center;
     margin-block-end: 6rem;
@@ -971,48 +910,22 @@ import { ViewTransitions } from 'astro:transitions';
       }
     }
 
+    article {
+      background-color: red;
+    }
     &_list {
       display: grid;
       row-gap: 1.2rem;
       margin-block-end: 2.4rem;
 
-      .item {
-        padding: 2.4rem 1.2rem;
-        background-color: #fafafa;
-        border-radius: 4px;
-        box-shadow:
-          0 4px 4px 0 rgba(160, 160, 160, 0.14),
-          0 2px 5px 0 rgba(160, 160, 160, 0.12),
-          0 1px 10px 0 rgba(160, 160, 160, 0.1);
-
-        img {
-          margin-block-end: 1rem;
-          box-shadow:
-            0 4px 4px 0 rgba(160, 160, 160, 0.14),
-            0 2px 5px 0 rgba(160, 160, 160, 0.12),
-            0 1px 10px 0 rgba(160, 160, 160, 0.1);
-        }
-
-        .tag {
-          font-family: "manrope-bold", sans-serif;
-          font-weight: normal;
-          font-size: 1rem;
-          letter-spacing: -0.6px;
-          color: var(--semantic-blue-default-hover);
-        }
-
-        .time {
-          margin-block: 0.5rem;
-          color: var(--leather-dark-hover);
-          margin-block-end: 1.2rem;
-        }
-
-        h3 {
-          margin-block-start: 1.2rem;
-          margin-block-end: 1.2rem;
-        }
+      /*
+      .articles{
+        
       }
+      */
     }
+
+    
 
     &_cta {
       padding: 2rem 1.2rem;

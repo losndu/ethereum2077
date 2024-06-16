@@ -31,13 +31,10 @@ import MobileMenu from "../components/MobileMenu.astro";
       <li><a href="">yt</a></li>
       <li><PrimaryCta text="Join Community" /></li>
     </ul>
-    
-
-    <div class=navigation_mobile><MobileMenu text="Join" /></div>
   </nav>
-
 </header>
 
+<div class="navigation_mobile"><MobileMenu text="Join" /></div>
 
 <style lang="scss" is:global>
   header {
@@ -72,17 +69,16 @@ import MobileMenu from "../components/MobileMenu.astro";
       }
     }
 
-
-
     @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
       .navigation {
-      justify-content: space-between;
+        justify-content: space-between;
         &_social {
           display: flex;
         }
-        &_mobile {
-          display: none;
-        }
+      }
+
+      .navigation_mobile {
+        display: none;
       }
     }
 
@@ -93,8 +89,5 @@ import MobileMenu from "../components/MobileMenu.astro";
         }
       }
     }
-  }
-  .dark:hover.bg-hidden {
-    background-color: transparent;
   }
 </style>
