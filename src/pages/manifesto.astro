@@ -121,7 +121,7 @@ import { ViewTransitions } from "astro:transitions";
     padding-inline: var(--space-body);
 
     p {
-    font-size: 2.4rem;
+    font-size: clamp(1.25rem, 0.9891rem + 1.3043vi, 2rem);
     font-family: "manrope-medium", sans-serif;
   }
   }
@@ -155,7 +155,7 @@ import { ViewTransitions } from "astro:transitions";
     }
 
     p {
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 0.8261rem + 0.8696vi, 1.5rem);
   }
   }
 </style>
