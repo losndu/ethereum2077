@@ -1,5 +1,6 @@
 ---
 import PrimaryCta from "../components/PrimaryCta.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 ---
 
 <header>
@@ -30,65 +31,17 @@ import PrimaryCta from "../components/PrimaryCta.astro";
       <li><a href="">yt</a></li>
       <li><PrimaryCta text="Join Community" /></li>
     </ul>
-    <div class="navigation_mobile">
-      <button
-        id="menu-button"
-        data-collapse-toggle="navbar-default"
-        type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
-        aria-controls="navbar-default"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 17 14"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15"></path>
-        </svg>
-      </button>
-    </div>
-    <ul id="mobile-menu" class="hidden">
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/resources">Resources</a></li>
-    </ul>
+    
+
+    <div class=navigation_mobile><MobileMenu text="Join" /></div>
   </nav>
 
-  <script>
-    const menuButton = document.querySelector("#menu-button");
-    const mobileMenu = document.querySelector("#mobile-menu");
-
-    menuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("active");
-      menuButton.classList.toggle("active");
-      menuButton.classList.toggle("bg-hidden");
-    });
-
-    mobileMenu.addEventListener("click", (event) => {
-      if (event.target.tagName === "A") {
-        mobileMenu.classList.remove("active");
-        menuButton.classList.remove("active");
-        menuButton.classList.remove("dark:hover");
-        menuButton.classList.toggle("bg-hidden");
-      }
-    });
-  </script>
 </header>
 
 
 <style lang="scss" is:global>
   header {
-    margin-block-end: clamp(4rem, 2.8571rem + 5.7143vi, 4rem);
+    margin-block-end: 2rem;
     padding-block: 1.6rem;
     border-bottom: 0.5px solid rgb(229, 227, 227);
 
@@ -99,7 +52,7 @@ import PrimaryCta from "../components/PrimaryCta.astro";
     .navigation {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       margin-inline: var(--space-body);
 
       &_links {
@@ -119,31 +72,11 @@ import PrimaryCta from "../components/PrimaryCta.astro";
       }
     }
 
-    #mobile-menu.active {
-      display: flex;
-      flex-direction: column;
-      row-gap: 2rem;
-      padding: var(--space-body);
-      padding-block: 3.2rem;
-      position: fixed;
-      top: 5.8rem;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1000;
-      overflow-y: auto;
-      background-color: #006fff;
-      color: #fff;
-      height: 100vh;
-      overflow-y: auto;
 
-      a {
-        font-family: "manrope-medium" sans-serif;
-      }
-    }
 
     @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
       .navigation {
+      justify-content: space-between;
         &_social {
           display: flex;
         }

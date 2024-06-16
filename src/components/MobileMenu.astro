@@ -1,0 +1,28 @@
+
+<ul id="mobile-nav" class="">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/manifesto">Manifesto</a></li>
+</ul>
+
+<style lang="scss">
+    #mobile-nav {
+        position: fixed;
+        top: 93%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.2rem;
+        display: flex;
+        column-gap: 1.2rem;
+        background-color: var(--neutral-porcelain-light-normal);
+        border: 0.5px dotted var(--leather-default-active);
+        border-radius: 0.5rem;
+        padding: 1.2rem;
+        box-shadow: 0 4px 4px 0 rgba(0, 121, 255, 0.1), 0 2px 5px 0 rgba(0, 111, 245, 0.08), 0 1px 10px 0 rgba(0, 101, 235, 0.06);
+
+        a {
+          color: var(--neutral-porcelain-default-normal);
+        }
+    }
+</style>
