@@ -8,14 +8,154 @@ import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 ---
 
-<Layout title="Communities around the world">
+<Layout title="Manifesto | Ethereum-2077 Collective">
   <Main>
-    <div class="hero">
-      <H1 text="A decentralised future" />
+    <section class="hero">
+      <div class="events">
+        <span>🤝 &nbsp;&nbsp;</span>
+        <a href="">Upcoming community event&nbsp;&nbsp;</a>
+        <img src="/arrow.svg" alt="" width="16" height="16" />
+      </div>
+      <H1 text="Building a decentralised future" />
       <p class="hero_subheading">
         Explore Ethereum with the best community for web3. Interacting with
         crypto has never been so simple.
       </p>
-    </div>
+      <div class="hero_image">
+        <img src="/images/drums.jpg" alt="" />
+      </div>
+    </section>
+    <section class="heading">
+      <p>
+        Our mission is to empower individuals to achieve their aspirations and
+        create a better future for all, by leveraging innovative decentralised
+        technologies to create a virtual space where freedom, liberty, and human
+        sovereignty are protected, and censorship resistance is ensured.
+      </p>
+      <p>
+        Our mission is to empower individuals to achieve their aspirations and
+        create a better future for all, by leveraging innovative decentralised
+        technologies to create a virtual space where freedom, liberty, and human
+        sovereignty are protected, and censorship resistance is ensured.
+      </p>
+    </section>
+    <section class="body">
+      <h2>Our Values</h2>
+      <ul>
+        <li>
+          <h3><span>1.</span>transparency</h3>
+          <p>
+            Our mission is to empower individuals to achieve their aspirations and
+            create a better future for all, by leveraging innovative decentralised
+            technologies to create a virtual space where freedom, liberty, and human
+            sovereignty are protected, and censorship resistance is ensured.
+          </p>
+        </li>
+        <li>
+          <h3><span>2.</span>transparency</h3>
+          <p>
+            Our mission is to empower individuals to achieve their aspirations and
+            create a better future for all, by leveraging innovative decentralised
+            technologies to create a virtual space where freedom, liberty, and human
+            sovereignty are protected, and censorship resistance is ensured.
+          </p>
+        </li>
+        <li>
+          <h3><span>3.</span>transparency</h3>
+          <p>
+            Our mission is to empower individuals to achieve their aspirations and
+            create a better future for all, by leveraging innovative decentralised
+            technologies to create a virtual space where freedom, liberty, and human
+            sovereignty are protected, and censorship resistance is ensured.
+          </p>
+        </li>
+        <li>
+          <h3><span>4.</span>transparency</h3>
+          <p>
+            Our mission is to empower individuals to achieve their aspirations and
+            create a better future for all, by leveraging innovative decentralised
+            technologies to create a virtual space where freedom, liberty, and human
+            sovereignty are protected, and censorship resistance is ensured.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <Footer />
   </Main>
 </Layout>
+
+<style lang="scss">
+  .hero {
+    text-align: center;
+    margin-block-end: 4rem;
+
+    .events {
+      margin-block-end: 1.2rem;
+      display: inline-flex;
+      column-gap: 0.2rem;
+      align-items: center;
+      background-color: #f4f4f5;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2px;
+    }
+    &_subheading {
+      max-width: 32rem;
+      margin: auto;
+      font-size: var(--subheading);
+      margin-block-start: 1.2rem;
+      margin-block-end: 2rem;
+    }
+    &_image {
+      max-width: 1240px;
+      padding-inline: var(--space-body);
+      margin: auto;
+      border-radius: 8px;
+    }
+  }
+  .heading {
+    display: grid;
+    row-gap: 1.2rem;
+    max-width: 1024px;
+    margin-inline: auto;
+    margin-block-end: 6rem;
+    padding-inline: var(--space-body);
+
+    p {
+    font-size: 2.4rem;
+    font-family: "manrope-medium", sans-serif;
+  }
+  }
+
+  .body {
+    max-width: 1024px;
+    margin-inline: auto;
+    margin-block-end: 8rem;
+    padding-inline: var(--space-body);
+
+    h2 {
+      margin-block-end: 2.4rem;
+    }
+
+    h3 {
+      text-transform: capitalize;
+      span {
+      font-family: "manrope-bold", sans-serif;
+      color: var(--semantic-blue-default-normal);
+      padding-inline-end: .5rem;
+    }
+    }
+
+    ul {
+    display: grid;
+    row-gap: 2.4rem;
+    }
+    li {
+      display: grid;
+      row-gap: .8rem;
+    }
+
+    p {
+    font-size: 1.6rem;
+  }
+  }
+</style>

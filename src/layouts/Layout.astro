@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import "../css/styles.css";
 import Header from "../components/Header.astro";
 interface Props {
@@ -75,7 +75,39 @@ const {
     <Header />
     <slot />
   </body>
-</html>
+  
+  <style lang="scss" is:global>
+    .linkText {
+      transition:
+        background 0.15s ease-out,
+        transform 0.1s ease-out,
+        box-shadow 0.15s ease-out;
+      position: relative;
+      padding-block-end: 0.4rem;
+      transition: border-bottom 0s;
 
-<style is:global>
-</style>
+      &:hover {
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          border-bottom: 2px dotted var(--semantic-blue-default-hover);
+          animation: animateBorder 1s linear;
+          transition: width 2s linear;
+        }
+      }
+
+      @keyframes animateBorder {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+    }
+  </style>
+</html>

@@ -3,7 +3,7 @@ author: michael-scott
 categories: ["studio tips"]
 date: 08/10/2021
 featured: false
-image: ./images/drums.jpg
+image: ./images/img.svg
 title: snare
 url: https://google.com
 ---

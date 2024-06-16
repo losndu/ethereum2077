@@ -3,7 +3,7 @@ author: dwight-schrute
 categories: ["studio tips"]
 date: 08/10/2021
 featured: false
-image: ./images/photoshoot.jpg
+image: ./images/img.svg
 title: ethereum phone
 url: https://google.com
 ---

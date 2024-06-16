@@ -3,7 +3,7 @@ author: pam-beesely
 categories: ["career advice"]
 date: 08/10/2021
 featured: false
-image: ./images/record.jpg
+image: ./images/img.svg
 title: Creating app
 url: https://google.com
 ---

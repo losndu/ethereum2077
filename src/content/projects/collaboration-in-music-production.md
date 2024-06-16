@@ -3,7 +3,7 @@ author: michael-scott
 categories: ["studio tips"]
 date: 08/10/2021
 featured: false
-image: ./images/band.jpg
+image: ./images/img.svg
 title: Collaboration
 url: https://google.com
 ---

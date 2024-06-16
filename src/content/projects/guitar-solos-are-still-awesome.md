@@ -3,7 +3,7 @@ author: jim-halpert
 categories: ["career advice"]
 date: 08/10/2021
 featured: false
-image: ./images/guitarist.jpg
+image: ./images/img.svg
 title: Guitar solos
 url: https://google.com
 ---

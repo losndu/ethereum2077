@@ -3,7 +3,7 @@ author: michael-scott
 categories: ["latest", "insights"]
 date: 08/10/2021
 featured: true
-image: ./images/producer.jpg
+image: ./images/img.svg
 title: The art of
 url: https://google.com
 ---

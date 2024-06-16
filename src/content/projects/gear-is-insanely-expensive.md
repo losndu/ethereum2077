@@ -3,7 +3,7 @@ author: dwight-schrute
 categories: ["career advice"]
 date: 08/10/2021
 featured: false
-image: ./images/gear.jpg
+image: ./images/img.svg
 title: Gear is insane
 url: https://google.com
 ---
